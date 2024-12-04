@@ -1,7 +1,7 @@
 {
-  "name": "nova-helper",
+  "name": "raiders-helper",
   "version": "0.2.8",
-  "description": "Nova helper module",
+  "description": "Raiders helper module",
   "engines": {
     "node": ">=18.18",
     "npm": ">=10.5"
