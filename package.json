@@ -1,6 +1,6 @@
 {
   "name": "raiders-helper",
-  "version": "0.2.9",
+  "version": "0.3.0",
   "description": "Raiders helper module",
   "engines": {
     "node": ">=18.18",
