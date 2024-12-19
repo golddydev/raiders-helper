@@ -1,3 +1,4 @@
-build
-dist
+build/
+dist/
+pnpm-lock.yaml
 plutus.json
