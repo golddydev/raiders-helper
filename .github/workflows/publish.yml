@@ -32,11 +32,11 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
-      - name: Update npm
-        run: npm install -g npm@latest
+      - name: Update npm and install pnpm
+        run: npm install -g npm@latest pnpm
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm install --frozen-lockfile
 
       - name: Bump version and commit
         run: |
@@ -45,13 +45,13 @@ jobs:
           npm version ${{ github.event.inputs.versionType }} -m "chore(release): bump to %s version"
 
       - name: Build
-        run: npm run build
+        run: pnpm run build
 
       - name: Remove dev tools
         run: |
           jq "del(.bin)" package.json > package.json.tmp
           mv package.json.tmp package.json
-          npm install --production
+          pnpm install --prod
 
       - name: Publish to npm
         run: npm publish
