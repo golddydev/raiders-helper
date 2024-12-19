@@ -45,7 +45,7 @@ jobs:
           npm version ${{ github.event.inputs.versionType }} -m "chore(release): bump to %s version"
 
       - name: Build
-        run: pnpm run build
+        run: npm run build
 
       - name: Remove dev tools
         run: |
